@@ -32,20 +32,16 @@ export function NewTransactionModal() {
           
           <label htmlFor="">Tipo de Operação:
           <TransactionType>
-            <TransactionTypeButton variant="income" value="income">
+            <TransactionTypeButton variant="compra" value="compra">
               <ArrowCircleUp size={24} />
               Compra
             </TransactionTypeButton>
-            <TransactionTypeButton variant="outcome" value="outcome">
+            <TransactionTypeButton variant="venda" value="venda">
               <ArrowCircleDown size={24} />
               Venda
             </TransactionTypeButton>
           </TransactionType>
           </label>
-          
-
-
-          
           <button type="submit">
             Cadastrar
           </button>

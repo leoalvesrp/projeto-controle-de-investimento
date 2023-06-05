@@ -1,0 +1,26 @@
+{
+  "transactions":[{
+    "id": 1,
+    "description": "Tesouro direto",
+    "price": 14000,
+    "titulo":"renda fixa",
+    "operacao": "compra",
+    "createdAt": "2022-07-29T19:36:44.505Z"
+  },
+  {
+    "id": 2,
+    "description": "bbsa3",
+    "price": 14000,
+    "titulo":"renda variavel",
+    "operacao": "venda",
+    "createdAt": "2022-07-29T20:36:44.505Z"
+  },
+  {
+    "id": 3,
+    "description": "bbsa3",
+    "price": 14000,
+    "titulo":"renda variavel",
+    "operacao": "venda",
+    "createdAt": "2022-07-29T20:36:44.505Z"
+  }]
+}

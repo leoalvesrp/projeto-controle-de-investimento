@@ -1,9 +1,18 @@
+import { useContext} from "react";
 import { Header } from "../../Components/Header";
 import { Sumary } from "../../Components/Sumary";
 import { SearchForm } from "../Componentes/SearchForm";
 import { TransactionsContainer, TransactionsTable } from "./styles";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
+
+
+
 
 export function Transactions(){
+
+  const {transactions} = useContext(TransactionsContext)
+
+
   return(
     <div>
       <Header/>
@@ -12,32 +21,25 @@ export function Transactions(){
         <SearchForm/>
         <TransactionsTable>
           <tbody>
-                <tr>
-                  <td width="40%">Tesouro direto</td>
+            {transactions.map((transaction)=>{
+              return(
+                <tr key={transaction.id}>
+                  <td width="40%">{transaction.description}</td>
                   <td>
                     <span>
-                      1200
+                      {transaction.price}
                     </span>
                   </td>
-                  <td>Renda Fixa</td>
-                  <td>Compra</td>
+                  <td>{transaction.titulo}</td>
+                  <td>{transaction.operacao}</td>
                   <td>
-                    05/06/2023
+                    {transaction.createdAt}
                   </td>
                 </tr>
-                <tr>
-                  <td width="40%">bbsa3</td>
-                  <td>
-                    <span>
-                      800
-                    </span>
-                  </td>
-                  <td>Renda Variável</td>
-                  <td>Compra</td>
-                  <td>
-                    05/06/2023
-                  </td>
-                </tr>
+              )
+            })}
+                
+                
           </tbody>
         </TransactionsTable>
       </TransactionsContainer>
