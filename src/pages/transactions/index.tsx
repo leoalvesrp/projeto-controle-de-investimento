@@ -1,5 +1,5 @@
-import { Header } from "../../../Components/Header";
-import { Sumary } from "../../../Components/Sumary";
+import { Header } from "../../Components/Header";
+import { Sumary } from "../../Components/Sumary";
 import { SearchForm } from "../Componentes/SearchForm";
 import { TransactionsContainer, TransactionsTable } from "./styles";
 
