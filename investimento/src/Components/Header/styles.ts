@@ -16,16 +16,16 @@ export const HeaderContent = styled.div`
 `
 
 export const Logo = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 
-font-size: 2rem;
-color:${(props=>props.theme["green-300"])};
-span{
-  font-weight: 700;
-  color: ${(props)=>props.theme.white};
+  font-size: 2rem;
+  color:${(props=>props.theme["green-300"])};
+  span{
+    font-weight: 700;
+    color: ${(props)=>props.theme.white};
 
 }
 `
