@@ -3,7 +3,7 @@
     {
       "description": "Tesouro Direto",
       "price": 1500,
-      "titulo": "Renda fixa",
+      "titulo": "Renda Fixa",
       "operacao": "Compra",
       "createdAt": "2023-06-07T18:28:50.273Z",
       "id": 1
@@ -11,7 +11,7 @@
     {
       "description": "bbsa3",
       "price": 1500,
-      "titulo": "Renda variavel",
+      "titulo": "Renda Variavel",
       "operacao": "Compra",
       "createdAt": "2023-06-07T18:29:51.108Z",
       "id": 2
@@ -19,7 +19,7 @@
     {
       "description": "bbsa3",
       "price": 300,
-      "titulo": "Renda variavel",
+      "titulo": "Renda Variavel",
       "operacao": "Venda",
       "createdAt": "2023-06-07T18:30:10.151Z",
       "id": 3
@@ -27,7 +27,7 @@
     {
       "description": "engie3",
       "price": 100,
-      "titulo": "Renda variavel",
+      "titulo": "Renda Variavel",
       "operacao": "Compra",
       "createdAt": "2023-06-07T18:31:36.200Z",
       "id": 4

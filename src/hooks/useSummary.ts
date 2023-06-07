@@ -6,28 +6,28 @@ export function useSummary() {
   const summary = transactions.reduce(
     (acc, transaction) => {
       if (
-        transaction.titulo === 'Renda fixa' &&
+        transaction.titulo === 'Renda Fixa' &&
         transaction.operacao === 'Compra'
       ) {
         acc.rendafixa += transaction.price
         acc.total += transaction.price
       }
       if (
-        transaction.titulo === 'Renda fixa' &&
+        transaction.titulo === 'Renda Fixa' &&
         transaction.operacao === 'Venda'
       ) {
         acc.rendafixa -= transaction.price
         acc.total -= transaction.price
       }
       if (
-        transaction.titulo === 'Renda variavel' &&
+        transaction.titulo === 'Renda Variavel' &&
         transaction.operacao === 'Compra'
       ) {
         acc.rendavariavel += transaction.price
         acc.total += transaction.price
       }
       if (
-        transaction.titulo === 'Renda variavel' &&
+        transaction.titulo === 'Renda Variavel' &&
         transaction.operacao === 'Venda'
       ) {
         acc.rendavariavel -= transaction.price

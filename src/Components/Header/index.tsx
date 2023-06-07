@@ -7,8 +7,11 @@ import {
   NewTransactionButton,
 } from './styles'
 import { NewTransactionModal } from '../NewTransactionModal'
+import { useState } from 'react'
 
 export function Header() {
+  const [open, setOpen] = useState<boolean>(false)
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -16,12 +19,11 @@ export function Header() {
           <PiggyBank size={60} />
           <span>DT Investimentos</span>
         </Logo>
-        <Dialog.Root>
+        <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
             <NewTransactionButton>Nova transação</NewTransactionButton>
           </Dialog.Trigger>
-
-          <NewTransactionModal />
+          <NewTransactionModal open={open} onOpenChange={setOpen} />
         </Dialog.Root>
       </HeaderContent>
     </HeaderContainer>

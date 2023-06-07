@@ -18,19 +18,23 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import * as z from 'zod'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
   price: z.number(),
-  titulo: z.enum(['Renda fixa', 'Renda variavel']),
+  titulo: z.enum(['Renda Fixa', 'Renda Variavel']),
   operacao: z.enum(['Compra', 'Venda']),
 })
 
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
+interface NewTransactionModalProps {
+  open: boolean
+  onOpenChange: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-export function NewTransactionModal() {
+export function NewTransactionModal(props: NewTransactionModalProps) {
   const { createdTransactions } = useContext(TransactionsContext)
 
   const {
@@ -42,7 +46,7 @@ export function NewTransactionModal() {
   } = useForm<NewTransactionFormInputs>({
     resolver: zodResolver(newTransactionFormSchema),
     defaultValues: {
-      titulo: 'Renda fixa',
+      titulo: 'Renda Fixa',
       operacao: 'Compra',
     },
   })
@@ -58,6 +62,7 @@ export function NewTransactionModal() {
     })
 
     reset()
+    props.onOpenChange(false)
 
     console.log(data)
   }
@@ -101,14 +106,14 @@ export function NewTransactionModal() {
                   >
                     <TransactionOptionsButton
                       variant="RendaFixa"
-                      value="Renda fixa"
+                      value="Renda Fixa"
                     >
                       <Wallet size={24} />
                       Renda Fixa
                     </TransactionOptionsButton>
                     <TransactionOptionsButton
                       variant="RendaVariavel"
-                      value="Renda variavel"
+                      value="Renda Variavel"
                     >
                       <Wallet size={24} />
                       Renda Variável

@@ -5,14 +5,14 @@ interface Transaction {
   id: number
   description: string
   price: number
-  titulo: 'Renda fixa' | 'Renda variavel'
+  titulo: 'Renda Fixa' | 'Renda Variavel'
   operacao: 'Compra' | 'Venda'
   createdAt: string
 }
 interface NewTransactionInputs {
   description: string
   price: number
-  titulo: 'Renda fixa' | 'Renda variavel'
+  titulo: 'Renda Fixa' | 'Renda Variavel'
   operacao: 'Compra' | 'Venda'
 }
 
