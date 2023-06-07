@@ -1,26 +1,44 @@
 {
-  "transactions":[{
-    "id": 1,
-    "description": "Tesouro direto",
-    "price": 14000,
-    "titulo":"renda fixa",
-    "operacao": "compra",
-    "createdAt": "2022-07-29T19:36:44.505Z"
-  },
-  {
-    "id": 2,
-    "description": "bbsa3",
-    "price": 14000,
-    "titulo":"renda variavel",
-    "operacao": "compra",
-    "createdAt": "2022-07-29T20:36:44.505Z"
-  },{
-    "id": 2,
-    "description": "bbsa3",
-    "price": 14000,
-    "titulo":"renda variavel",
-    "operacao": "venda",
-    "createdAt": "2022-07-29T20:36:44.505Z"
-  }]
-  
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Tesouro direto",
+      "price": 14000,
+      "titulo": "renda fixa",
+      "operacao": "compra",
+      "createdAt": "2022-07-29T19:36:44.505Z"
+    },
+    {
+      "id": 2,
+      "description": "bbsa3",
+      "price": 14000,
+      "titulo": "renda variavel",
+      "operacao": "compra",
+      "createdAt": "2022-07-29T20:36:44.505Z"
+    },
+    {
+      "id": 3,
+      "description": "bbsa3",
+      "price": 14000,
+      "titulo": "renda variavel",
+      "operacao": "venda",
+      "createdAt": "2022-07-29T20:36:44.505Z"
+    },
+    {
+      "description": "enbr3",
+      "price": 300,
+      "titulo": "rendavariavel",
+      "operacao": "compra",
+      "createdAt": "2023-06-07T13:10:53.380Z",
+      "id": 4
+    },
+    {
+      "description": "enbr3",
+      "price": 2035,
+      "titulo": "rendavariavel",
+      "operacao": "compra",
+      "createdAt": "2023-06-07T13:36:18.163Z",
+      "id": 5
+    }
+  ]
 }
