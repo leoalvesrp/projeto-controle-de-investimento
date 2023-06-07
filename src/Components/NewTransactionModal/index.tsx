@@ -24,8 +24,8 @@ import { TransactionsContext } from '../../contexts/TransactionsContext'
 const newTransactionFormSchema = z.object({
   description: z.string(),
   price: z.number(),
-  titulo: z.enum(['rendafixa', 'rendavariavel']),
-  operacao: z.enum(['compra', 'venda']),
+  titulo: z.enum(['Renda fixa', 'Renda variavel']),
+  operacao: z.enum(['Compra', 'Venda']),
 })
 
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
@@ -42,8 +42,8 @@ export function NewTransactionModal() {
   } = useForm<NewTransactionFormInputs>({
     resolver: zodResolver(newTransactionFormSchema),
     defaultValues: {
-      titulo: 'rendafixa',
-      operacao: 'compra',
+      titulo: 'Renda fixa',
+      operacao: 'Compra',
     },
   })
 
@@ -101,14 +101,14 @@ export function NewTransactionModal() {
                   >
                     <TransactionOptionsButton
                       variant="RendaFixa"
-                      value="rendafixa"
+                      value="Renda fixa"
                     >
                       <Wallet size={24} />
                       Renda Fixa
                     </TransactionOptionsButton>
                     <TransactionOptionsButton
                       variant="RendaVariavel"
-                      value="rendavariavel"
+                      value="Renda variavel"
                     >
                       <Wallet size={24} />
                       Renda Variável
@@ -130,11 +130,11 @@ export function NewTransactionModal() {
                     onValueChange={field.onChange}
                     value={field.value}
                   >
-                    <TransactionTypeButton variant="compra" value="compra">
+                    <TransactionTypeButton variant="compra" value="Compra">
                       <ArrowCircleUp size={24} />
                       Compra
                     </TransactionTypeButton>
-                    <TransactionTypeButton variant="venda" value="venda">
+                    <TransactionTypeButton variant="venda" value="Venda">
                       <ArrowCircleDown size={24} />
                       Venda
                     </TransactionTypeButton>

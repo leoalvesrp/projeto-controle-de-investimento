@@ -43,7 +43,7 @@ export const Content = styled(Dialog.Content)`
     button[type='submit'] {
       height: 50px;
       border: 0;
-      background: ${(props) => props.theme['green-500']};
+      background: ${(props) => props.theme['orange-700']};
       color: ${(props) => props.theme.white};
       font-weight: bold;
       padding: 0 1.25rem;
@@ -56,7 +56,7 @@ export const Content = styled(Dialog.Content)`
         cursor: not-allowed;
       }
       &:not(:disabled):hover {
-        background: ${(props) => props.theme['green-700']};
+        background: ${(props) => props.theme['orange-500']};
         transition: background-color 0.2s;
       }
     }
@@ -148,10 +148,7 @@ export const TransactionOptionsButton = styled(
   color: ${(props) => props.theme['gray-300']};
 
   svg {
-    color: ${(props) =>
-      props.variant === 'RendaFixa'
-        ? props.theme['green-300']
-        : props.theme['red-300']};
+    color: ${(props) => props.theme['gray-100']};
   }
 
   &[data-state='unchecked']:hover {
@@ -160,14 +157,14 @@ export const TransactionOptionsButton = styled(
   }
 
   &[data-state='checked'] {
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme['gray-900']};
     background: ${(props) =>
       props.variant === 'RendaFixa'
-        ? props.theme['green-500']
-        : props.theme['red-500']};
+        ? props.theme['blue-700']
+        : props.theme['orange-700']};
 
     svg {
-      color: ${(props) => props.theme.white};
+      color: ${(props) => props.theme['gray-900']};
     }
   }
 `

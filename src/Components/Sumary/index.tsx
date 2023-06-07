@@ -8,24 +8,24 @@ export function Sumary() {
 
   return (
     <SummaryContainer>
-      <SummaryCard>
+      <SummaryCard variant="blue">
         <header>
           <span>Renda Fixa</span>
-          <Wallet size={32} color="#00b37e" />
+          <Wallet size={32} color="#000" />
         </header>
         <strong>{priceFormatter.format(summary.rendafixa)}</strong>
       </SummaryCard>
-      <SummaryCard>
+      <SummaryCard variant="orange">
         <header>
           <span>Renda Variável</span>
-          <Wallet size={32} color="#00b37e" />
+          <Wallet size={32} color="#000" />
         </header>
         <strong>{priceFormatter.format(summary.rendavariavel)}</strong>
       </SummaryCard>
       <SummaryCard variant="green">
         <header>
           <span>Total</span>
-          <Money size={32} color="#00b37e" />
+          <Money size={32} color="#000" />
         </header>
         <strong>{priceFormatter.format(summary.total)}</strong>
       </SummaryCard>

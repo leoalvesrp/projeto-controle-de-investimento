@@ -13,7 +13,7 @@ export function Header() {
     <HeaderContainer>
       <HeaderContent>
         <Logo>
-          <PiggyBank size={50} />
+          <PiggyBank size={60} />
           <span>DT Investimentos</span>
         </Logo>
         <Dialog.Root>

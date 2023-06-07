@@ -22,7 +22,7 @@ export const Logo = styled.div`
   gap: 1rem;
 
   font-size: 2rem;
-  color: ${(props) => props.theme['green-300']};
+  color: ${(props) => props.theme['orange-700']};
   span {
     font-weight: 700;
     color: ${(props) => props.theme.white};
@@ -32,7 +32,7 @@ export const Logo = styled.div`
 export const NewTransactionButton = styled.button`
   height: 50px;
   border: 0;
-  background: ${(props) => props.theme['green-500']};
+  background: ${(props) => props.theme['orange-700']};
   color: ${(props) => props.theme.white};
   font-weight: bold;
   padding: 0 1.25rem;
@@ -40,7 +40,7 @@ export const NewTransactionButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: ${(props) => props.theme['green-700']};
+    background: ${(props) => props.theme['orange-500']};
     transition: background-color 0.2s;
   }
 `
