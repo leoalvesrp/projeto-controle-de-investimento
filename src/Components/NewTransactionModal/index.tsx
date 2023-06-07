@@ -1,59 +1,66 @@
-import * as Dialog from '@radix-ui/react-dialog';
-import { CloseButton, Content, Overlay, TransactionOptions, TransactionOptionsButton, TransactionType, TransactionTypeButton } from './styles';
-import { ArrowCircleDown, ArrowCircleUp, Wallet, X } from '@phosphor-icons/react';
+import * as Dialog from '@radix-ui/react-dialog'
+import {
+  CloseButton,
+  Content,
+  Overlay,
+  TransactionOptions,
+  TransactionOptionsButton,
+  TransactionType,
+  TransactionTypeButton,
+} from './styles'
+import {
+  ArrowCircleDown,
+  ArrowCircleUp,
+  Wallet,
+  X,
+} from '@phosphor-icons/react'
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Controller, useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { useContext } from 'react';
-import { TransactionsContext } from '../../contexts/TransactionsContext';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Controller, useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { useContext } from 'react'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
   price: z.number(),
   titulo: z.enum(['rendafixa', 'rendavariavel']),
   operacao: z.enum(['compra', 'venda']),
+})
 
-});
-
-type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>;
-
-
+type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
-const {createdTransactions} = useContext(TransactionsContext)
+  const { createdTransactions } = useContext(TransactionsContext)
 
-const {
-  register, 
-  handleSubmit, 
-  formState:{isSubmitting},
-  control, 
-  reset
-}= useForm<NewTransactionFormInputs>({
-  resolver: zodResolver(newTransactionFormSchema),
-  defaultValues:{
-    titulo:'rendafixa',
-    operacao:'compra',
-  }
-}
-  
-)
-
-async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
-  const {description, price, titulo, operacao} = data;
-  
-  createdTransactions({
-    description,
-    price,
-    titulo,
-    operacao
-
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+    control,
+    reset,
+  } = useForm<NewTransactionFormInputs>({
+    resolver: zodResolver(newTransactionFormSchema),
+    defaultValues: {
+      titulo: 'rendafixa',
+      operacao: 'compra',
+    },
   })
-  
-  reset()
 
-  console.log(data);
-}
+  async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
+    const { description, price, titulo, operacao } = data
+
+    createdTransactions({
+      description,
+      price,
+      titulo,
+      operacao,
+    })
+
+    reset()
+
+    console.log(data)
+  }
 
   return (
     <Dialog.Portal>
@@ -67,52 +74,61 @@ async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
         </CloseButton>
 
         <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+          <input
+            {...register('description')}
+            type="text"
+            placeholder="Descrição"
+            required
+          />
 
-          <input 
-          {...register('description')} 
-          type="text" 
-          placeholder="Descrição" 
-          required />
-
-          <input 
-          {...register('price', { valueAsNumber: true })} 
-          type="number" 
-          placeholder="Preço" 
-          required />
+          <input
+            {...register('price', { valueAsNumber: true })}
+            type="number"
+            placeholder="Preço"
+            required
+          />
 
           <Controller
-          control={control}
-          name="titulo"
-          render={({field})=>{
-            return(
-              <label htmlFor="titulo">Titulo:
+            control={control}
+            name="titulo"
+            render={({ field }) => {
+              return (
+                <label htmlFor="titulo">
+                  Titulo:
                   <TransactionOptions
-                  onValueChange={field.onChange}
-                  value={field.value}
+                    onValueChange={field.onChange}
+                    value={field.value}
                   >
-                  <TransactionOptionsButton  variant="RendaFixa" value="rendafixa">
-                    <Wallet size={24}/>
+                    <TransactionOptionsButton
+                      variant="RendaFixa"
+                      value="rendafixa"
+                    >
+                      <Wallet size={24} />
                       Renda Fixa
                     </TransactionOptionsButton>
-                    <TransactionOptionsButton  variant="RendaVariavel" value="rendavariavel">
-                      <Wallet size={24}/>
+                    <TransactionOptionsButton
+                      variant="RendaVariavel"
+                      value="rendavariavel"
+                    >
+                      <Wallet size={24} />
                       Renda Variável
-                  </TransactionOptionsButton>
-                </TransactionOptions>
-              </label>
-            )
-          }}
+                    </TransactionOptionsButton>
+                  </TransactionOptions>
+                </label>
+              )
+            }}
           />
-          
+
           <Controller
-          control={control}
-          name='operacao'
-          render={({field})=>{
-            return(
-              <label htmlFor="operacao">Tipo de Operação:
+            control={control}
+            name="operacao"
+            render={({ field }) => {
+              return (
+                <label htmlFor="operacao">
+                  Tipo de Operação:
                   <TransactionType
-                  onValueChange={field.onChange}
-                  value={field.value}
+                    onValueChange={field.onChange}
+                    value={field.value}
                   >
                     <TransactionTypeButton variant="compra" value="compra">
                       <ArrowCircleUp size={24} />
@@ -123,13 +139,10 @@ async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
                       Venda
                     </TransactionTypeButton>
                   </TransactionType>
-               </label>
-            )
-          }}
-          
-          
+                </label>
+              )
+            }}
           />
-          
 
           <button type="submit" disabled={isSubmitting}>
             Cadastrar
@@ -137,5 +150,5 @@ async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
         </form>
       </Content>
     </Dialog.Portal>
-  );
+  )
 }

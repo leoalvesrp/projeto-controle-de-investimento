@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   background: ${(props) => props.theme['gray-900']};
@@ -22,12 +22,11 @@ export const Logo = styled.div`
   gap: 1rem;
 
   font-size: 2rem;
-  color:${(props=>props.theme["green-300"])};
-  span{
+  color: ${(props) => props.theme['green-300']};
+  span {
     font-weight: 700;
-    color: ${(props)=>props.theme.white};
-
-}
+    color: ${(props) => props.theme.white};
+  }
 `
 
 export const NewTransactionButton = styled.button`
@@ -45,4 +44,3 @@ export const NewTransactionButton = styled.button`
     transition: background-color 0.2s;
   }
 `
-

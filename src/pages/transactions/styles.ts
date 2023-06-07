@@ -29,11 +29,12 @@ export const TransactionsTable = styled.table`
   }
 `
 interface PriceHighlightProps {
-  variant: "compra" | "venda";
+  variant: 'compra' | 'venda'
 }
 
 export const PriceHighlight = styled.span<PriceHighlightProps>`
-  color: ${props => props.variant === "compra" ? props.theme["green-300"] : props.theme["red-300"]};
-`;
-
-
+  color: ${(props) =>
+    props.variant === 'compra'
+      ? props.theme['green-300']
+      : props.theme['red-300']};
+`
